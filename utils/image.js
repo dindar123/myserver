@@ -1,4 +1,3 @@
-var cv = require('opencv');
 var request = require('request');
 var q = require('q');
 var ReadWriteLock = require('rwlock');
