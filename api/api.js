@@ -44,19 +44,21 @@ module.exports.init = function () {
   server.get("/chats/:chatId/messages", ChatController.findMessages);
 
   vkApi.init();
-
-  var deferred = q.defer();
-  var port = process.env.PORT || 3000
-  server.listen(port, function (err) {
-    if (err) {
-      logger.error(err);
-      deferred.reject();
-    } else {
-      logger.info('API is ready at : ' + port);
-      deferred.resolve();
-    }
-  });
-  return deferred.promise;
+	 
+	var deferred = q.defer();
+	var port = process.env.PORT || 3000
+	server.listen(port, function (err) {
+		
+		console.log("app is running on port " + port);
+		
+		if (err) {
+			logger.error(err);
+			deferred.reject();
+		} else {
+logger.info('API is ready at : https://chernika.herokuapp.com/');			deferred.resolve();
+		}
+	});
+	return deferred.promise;
 };
 
 function initBasicComponents() {
