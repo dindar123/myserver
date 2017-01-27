@@ -46,7 +46,7 @@ module.exports.init = function () {
   vkApi.init();
 
   var deferred = q.defer();
-  var port = config.apiPort;
+  var port = process.env.PORT || 3000
   server.listen(port, function (err) {
     if (err) {
       logger.error(err);
