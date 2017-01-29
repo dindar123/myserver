@@ -6,7 +6,7 @@ module.exports = {
   init: function () {
 
     var s = config.dbSettings;
-    var connection = mongoose.connect('mongodb://deen:dr150314@ds163718.mlab.com:63718/heroku_36wc3k78', function (err) {
+    var connection = mongoose.connect('mongodb://deen:dr150314@ds135669.mlab.com:35669/heroku_v3hvcglq', function (err) {
       if (err) {
         logger.error('Mongodb connection error: ' + err);
       }
