@@ -17,9 +17,6 @@ module.exports.init = function () {
   server.on('MethodNotAllowed', CORSPolicy.unknownMethodHandler);
 
   server.post("/user", UserController.login, AuthPolicy.login);
-  server.post('/auth/facebook', UserController.login, AuthPolicy.login, (req, res) => {
-    res.json({token: req.genertedToken});
-});
 
   server.use(AuthPolicy.checkSession);
   server.get("/user/confirmPolicy", UserController.confirmPolicy);
